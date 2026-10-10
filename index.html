@@ -7,411 +7,730 @@
 <title>Dr. P. Maheswara Reddy | Entomologist & Lepidoptera Taxonomist</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #263238;
+    background: #f5f7f6;
+    line-height: 1.6;
+}
+
+/* HERO BANNER */
+
+.hero {
+    min-height: 300px;
+    background:
+        linear-gradient(90deg,
+            rgba(5,35,27,.78),
+            rgba(5,45,34,.66),
+            rgba(5,30,24,.52)),
+        url("banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 46px;
+    margin-bottom: 7px;
+    text-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+
+.hero .title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.hero .affiliation {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    margin-top: 22px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,.8);
+    padding: 9px 16px;
+    border-radius: 5px;
+    margin: 4px;
+    font-weight: 600;
+    background: rgba(0,50,38,.65);
+}
+
+.hero-buttons a:hover {
+    background: white;
+    color: #07543f;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: white;
+    text-align: center;
+    padding: 14px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #087356;
+}
+
+/* MAIN LAYOUT */
+
+.page {
+    max-width: 1250px;
+    margin: 28px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 22px;
+}
+
+/* PROFILE CARD */
+
+.profile-card {
+    background: white;
+    border-radius: 9px;
+    padding: 17px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    height: fit-content;
+    position: sticky;
+    top: 82px;
+}
+
+.profile-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.profile-card h2 {
+    font-family: Georgia, serif;
+    color: #064d3a;
+    font-size: 23px;
+    margin-bottom: 4px;
+}
+
+.profile-card .designation {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.profile-card p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.profile-links {
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+    padding-top: 12px;
+}
+
+.profile-links a {
+    display: block;
+    text-decoration: none;
+    color: #087356;
+    margin: 9px 0;
+    font-weight: 600;
+}
+
+.profile-links a:hover {
+    text-decoration: underline;
+}
+
+/* CONTENT */
+
+.content section {
+    background: white;
+    padding: 27px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    color: #07543f;
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #72ad91;
+}
+
+.content p {
+    margin-bottom: 12px;
+}
+
+/* RESEARCH */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.research-box {
+    background: #edf6f2;
+    border-left: 4px solid #168164;
+    padding: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* EDUCATION */
+
+.education-item {
+    border-left: 3px solid #158064;
+    padding: 0 0 18px 18px;
+    margin-left: 5px;
+    position: relative;
+}
+
+.education-item::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #087356;
+    left: -7px;
+    top: 6px;
+}
+
+.education-item h3 {
+    color: #064d3a;
+    font-family: Georgia, serif;
+    margin-bottom: 3px;
+}
+
+/* CONTRIBUTIONS */
+
+.contributions ul {
+    margin-left: 20px;
+}
+
+.contributions li {
+    margin-bottom: 9px;
+}
+
+/* PUBLICATIONS */
+
+.publication {
+    padding: 12px 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+.journal {
+    color: #087356;
+    font-style: italic;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact a {
+    color: #087356;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: #063d30;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 35px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .page {
+        grid-template-columns: 1fr;
     }
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #263238;
-        line-height: 1.7;
-        background: #f6f8f7;
-    }
-
-    header {
-        background: #123b32;
-        color: white;
-        padding: 70px 20px 60px;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 42px;
-        margin-bottom: 8px;
-    }
-
-    header h2 {
-        font-size: 21px;
-        font-weight: normal;
-        color: #d7ebe5;
-        margin-bottom: 18px;
-    }
-
-    header p {
-        font-size: 17px;
-        max-width: 800px;
+    .profile-card {
+        position: static;
+        max-width: 400px;
         margin: auto;
-    }
-
-    nav {
-        background: white;
-        padding: 15px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        z-index: 10;
-    }
-
-    nav a {
-        color: #123b32;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 0 15px;
-    }
-
-    nav a:hover {
-        color: #1d7a62;
-    }
-
-    .container {
-        max-width: 1050px;
-        margin: auto;
-        padding: 25px;
-    }
-
-    section {
-        background: white;
-        margin: 28px 0;
-        padding: 35px;
-        border-radius: 10px;
-        box-shadow: 0 3px 14px rgba(0,0,0,0.06);
-    }
-
-    h2.section-title {
-        color: #123b32;
-        font-size: 27px;
-        margin-bottom: 20px;
-        border-bottom: 3px solid #65a98e;
-        padding-bottom: 8px;
-    }
-
-    h3 {
-        color: #205b4c;
-        margin-top: 18px;
-        margin-bottom: 5px;
-    }
-
-    ul {
-        margin-left: 22px;
-        margin-top: 10px;
-    }
-
-    li {
-        margin-bottom: 8px;
     }
 
     .research-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 15px;
-        margin-top: 15px;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .research-item {
-        background: #eef6f3;
-        border-left: 4px solid #2c8068;
-        padding: 17px;
-        border-radius: 5px;
-        font-weight: 600;
+    .hero h1 {
+        font-size: 35px;
     }
 
-    .buttons {
-        margin-top: 28px;
-    }
-
-    .button {
+    nav a {
         display: inline-block;
-        background: #ffffff;
-        color: #123b32;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 18px;
-        border-radius: 5px;
-        margin: 5px;
+        margin: 5px 8px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .research-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 
-    .button:hover {
-        background: #d9eee7;
+    .hero h1 {
+        font-size: 30px;
     }
+}
 
-    .contact a {
-        color: #176b56;
-        text-decoration: none;
-    }
-
-    footer {
-        text-align: center;
-        background: #123b32;
-        color: white;
-        padding: 25px;
-        margin-top: 30px;
-    }
-
-    @media(max-width: 600px) {
-        header h1 {
-            font-size: 31px;
-        }
-
-        nav a {
-            display: inline-block;
-            margin: 6px 8px;
-        }
-
-        section {
-            padding: 25px;
-        }
-    }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Dr. P. Maheswara Reddy</h1>
+<!-- HERO -->
 
-    <h2>Entomologist | Lepidoptera Taxonomist | Assistant Professor</h2>
+<header class="hero">
 
-    <p>
-        Department of Entomology, School of Agriculture<br>
-        Mohan Babu University, Tirupati, Andhra Pradesh, India
-    </p>
+<div class="hero-content">
 
-    <div class="buttons">
-        <a class="button"
-           href="https://orcid.org/0000-0002-8337-7094"
-           target="_blank">ORCID</a>
-    </div>
+<h1>Dr. P. Maheswara Reddy</h1>
+
+<div class="title">
+Entomologist | Lepidoptera Taxonomist | Assistant Professor
+</div>
+
+<div class="affiliation">
+Department of Entomology, School of Agriculture<br>
+Mohan Babu University, Tirupati, Andhra Pradesh, India
+</div>
+
+<div class="hero-buttons">
+
+<a href="https://orcid.org/0000-0002-8337-7094"
+target="_blank">
+ORCID
+</a>
+
+<a href="#publications">
+Publications
+</a>
+
+<a href="mailto:pasammaheswarareddy@gmail.com">
+Email
+</a>
+
+</div>
+
+</div>
+
 </header>
 
+
+<!-- NAVIGATION -->
+
 <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#education">Education</a>
-    <a href="#contributions">Contributions</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#education">Education</a>
+<a href="#contributions">Contributions</a>
+<a href="#publications">Publications</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
-<div class="container">
+
+<div class="page">
+
+
+<!-- LEFT PROFILE -->
+
+<aside class="profile-card">
+
+<img src="profile.jpg.jpg"
+alt="Dr. P. Maheswara Reddy">
+
+<h2>Dr. P. Maheswara Reddy</h2>
+
+<div class="designation">
+Assistant Professor
+</div>
+
+<p>
+Department of Entomology<br>
+School of Agriculture<br>
+Mohan Babu University<br>
+Tirupati, Andhra Pradesh, India
+</p>
+
+<div class="profile-links">
+
+<a href="https://orcid.org/0000-0002-8337-7094"
+target="_blank">
+ORCID
+</a>
+
+<a href="#publications">
+Publications
+</a>
+
+<a href="mailto:pasammaheswarareddy@gmail.com">
+Email
+</a>
+
+</div>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="content">
+
 
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+<h2 class="section-title">About Me</h2>
 
-    <p>
-        I am an Assistant Professor in the Department of Entomology,
-        School of Agriculture, Mohan Babu University, Tirupati, India.
-        My principal research interests are insect taxonomy and systematics,
-        with particular emphasis on Lepidoptera of agricultural importance.
-    </p>
+<p>
+I am an Assistant Professor in the Department of Entomology,
+School of Agriculture, Mohan Babu University, Tirupati, India.
+My principal research interests are insect taxonomy and
+systematics, with particular emphasis on Lepidoptera of
+agricultural importance.
+</p>
 
-    <br>
-
-    <p>
-        My research focuses on the identification and characterization of
-        lepidopteran species using adult morphology, wing venation, male and
-        female genitalia, DNA barcoding and phylogenetic approaches. I am
-        particularly interested in Pyraloidea, Tortricoidea, Gracillarioidea
-        and Noctuoidea, including species associated with economically
-        important agricultural and horticultural crops.
-    </p>
+<p>
+My research focuses on the identification and characterization
+of lepidopteran species using adult morphology, wing venation,
+male and female genitalia, DNA barcoding and phylogenetic
+approaches. I am particularly interested in Pyraloidea,
+Tortricoidea, Gracillarioidea and Noctuoidea, including species
+associated with economically important agricultural and
+horticultural crops.
+</p>
 
 </section>
 
 
 <section id="research">
 
-    <h2 class="section-title">Research Interests</h2>
+<h2 class="section-title">Research Interests</h2>
 
-    <div class="research-grid">
+<div class="research-grid">
 
-        <div class="research-item">
-            Insect Taxonomy & Systematics
-        </div>
+<div class="research-box">
+Insect Taxonomy & Systematics
+</div>
 
-        <div class="research-item">
-            Lepidoptera Taxonomy
-        </div>
+<div class="research-box">
+Lepidoptera Taxonomy
+</div>
 
-        <div class="research-item">
-            Pyraloidea & Tortricoidea
-        </div>
+<div class="research-box">
+Pyraloidea & Tortricoidea
+</div>
 
-        <div class="research-item">
-            Morphology & Genitalia
-        </div>
+<div class="research-box">
+Morphology & Genitalia
+</div>
 
-        <div class="research-item">
-            Wing Venation
-        </div>
+<div class="research-box">
+Wing Venation
+</div>
 
-        <div class="research-item">
-            DNA Barcoding
-        </div>
+<div class="research-box">
+DNA Barcoding
+</div>
 
-        <div class="research-item">
-            Molecular Phylogenetics
-        </div>
+<div class="research-box">
+Molecular Phylogenetics
+</div>
 
-        <div class="research-item">
-            Agricultural Entomology
-        </div>
+<div class="research-box">
+Agricultural Entomology
+</div>
 
-        <div class="research-item">
-            Integrated Pest Management
-        </div>
+<div class="research-box">
+Integrated Pest Management
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
 <section id="education">
 
-    <h2 class="section-title">Education</h2>
+<h2 class="section-title">Education</h2>
 
-    <h3>Ph.D. in Entomology</h3>
-    <p>
-        Nagaland University, India
-    </p>
-    <p>
-        Research focused on the taxonomy, biology, DNA barcoding,
-        seasonal incidence and management of litchi fruit borers.
-    </p>
 
-    <h3>M.Sc. (Agriculture) – Entomology</h3>
-    <p>
-        University of Agricultural Sciences, Raichur, Karnataka, India
-    </p>
-    <p>
-        Research focused on the taxonomy of agriculturally important
-        Pyraloidea, with special reference to Spilomelinae.
-    </p>
+<div class="education-item">
 
-    <h3>B.Sc. Agriculture</h3>
-    <p>
-        Tamil Nadu Agricultural University, India
-    </p>
+<h3>Ph.D. in Entomology</h3>
+
+<p>
+<strong>Nagaland University, India</strong>
+</p>
+
+<p>
+Research focused on the taxonomy, DNA barcoding, biology,
+seasonal incidence and management of litchi fruit borers.
+</p>
+
+</div>
+
+
+<div class="education-item">
+
+<h3>M.Sc. (Agriculture) – Entomology</h3>
+
+<p>
+<strong>
+University of Agricultural Sciences, Raichur,
+Karnataka, India
+</strong>
+</p>
+
+<p>
+Research focused on the taxonomy of agriculturally important
+Pyraloidea, with special reference to Spilomelinae.
+</p>
+
+</div>
+
+
+<div class="education-item">
+
+<h3>B.Sc. Agriculture</h3>
+
+<p>
+<strong>
+Tamil Nadu Agricultural University, India
+</strong>
+</p>
+
+</div>
 
 </section>
 
 
-<section id="contributions">
+<section id="contributions" class="contributions">
 
-    <h2 class="section-title">Research Contributions</h2>
+<h2 class="section-title">
+Research Contributions
+</h2>
 
-    <ul>
-        <li>
-            Research on the taxonomy and systematics of agriculturally
-            important Lepidoptera.
-        </li>
+<ul>
 
-        <li>
-            Description and documentation of lepidopteran species using
-            adult morphology, genitalia and wing venation.
-        </li>
+<li>
+Taxonomic and systematic studies on agriculturally important
+Lepidoptera.
+</li>
 
-        <li>
-            Contribution to the description of new species including
-            <em>Spinaria indica</em> and
-            <em>Herpetogramma viraktamathi</em>.
-        </li>
+<li>
+Morphological characterization of moths using adult habitus,
+wing venation and male and female genitalia.
+</li>
 
-        <li>
-            Documentation of the occurrence of
-            <em>Thaumatotibia zophophanes</em> in India and its
-            association with litchi.
-        </li>
+<li>
+Contribution to the description of
+<em>Spinaria indica</em> and
+<em>Herpetogramma viraktamathi</em>.
+</li>
 
-        <li>
-            Application of DNA barcoding and molecular approaches
-            to support morphological identification of insect species.
-        </li>
+<li>
+Documentation of the occurrence of
+<em>Thaumatotibia zophophanes</em> in India and its
+association with litchi.
+</li>
 
-        <li>
-            Research on insect pests of cereals, horticultural crops
-            and other economically important plants.
-        </li>
-    </ul>
+<li>
+Application of DNA barcoding and molecular approaches to
+support morphological identification of insect species.
+</li>
+
+<li>
+Research on insect pests of cereals, horticultural crops and
+other economically important plants.
+</li>
+
+</ul>
 
 </section>
 
 
 <section id="publications">
 
-    <h2 class="section-title">Publications & Academic Activities</h2>
+<h2 class="section-title">
+Selected Publications
+</h2>
 
-    <p>
-        My research has been published in peer-reviewed journals dealing
-        with insect taxonomy, agricultural entomology, biodiversity and
-        pest management, including <em>Zootaxa</em>,
-        <em>Oriental Insects</em>, <em>Animal Biology</em>,
-        <em>Indian Journal of Entomology</em>,
-        <em>Journal of Horticultural Sciences</em> and
-        <em>Entomon</em>.
-    </p>
+<p>
+My research has been published in peer-reviewed journals
+covering insect taxonomy, agricultural entomology,
+biodiversity and pest management.
+</p>
 
-    <br>
 
-    <p>
-        I also contribute to the scientific community through peer review
-        of manuscripts in the fields of entomology, insect taxonomy,
-        biodiversity and crop protection.
-    </p>
+<div class="publication">
+
+<strong>
+Taxonomy of agriculturally important Spilomelinae
+(Lepidoptera: Crambidae) from Karnataka, India
+</strong>
+
+<br>
+
+<span class="journal">
+Oriental Insects
+</span>
+
+</div>
+
+
+<div class="publication">
+
+<strong>
+Research contributions on the taxonomy and biology of
+agriculturally important Lepidoptera
+</strong>
+
+<br>
+
+<span class="journal">
+Zootaxa, Animal Biology, Indian Journal of Entomology,
+Journal of Horticultural Sciences and Entomon
+</span>
+
+</div>
+
+
+<p style="margin-top:18px;">
+Additional publications and research outputs are available
+through my ORCID profile.
+</p>
+
+<p>
+<a href="https://orcid.org/0000-0002-8337-7094"
+target="_blank"
+style="color:#087356;font-weight:bold;">
+View ORCID Profile →
+</a>
+</p>
 
 </section>
 
 
 <section id="contact" class="contact">
 
-    <h2 class="section-title">Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-    <p>
-        <strong>Dr. P. Maheswara Reddy</strong><br>
-        Assistant Professor<br>
-        Department of Entomology<br>
-        School of Agriculture<br>
-        Mohan Babu University<br>
-        Tirupati, Andhra Pradesh, India
-    </p>
+<div class="contact-grid">
 
-    <br>
+<div>
 
-    <p>
-        <strong>Email:</strong>
-        <a href="mailto:pasammaheswarareddy@gmail.com">
-            pasammaheswarareddy@gmail.com
-        </a>
-    </p>
+<strong>
+Dr. P. Maheswara Reddy
+</strong>
 
-    <p>
-        <strong>ORCID:</strong>
-        <a href="https://orcid.org/0000-0002-8337-7094"
-           target="_blank">
-            0000-0002-8337-7094
-        </a>
-    </p>
+<br>
+
+Assistant Professor<br>
+Department of Entomology<br>
+School of Agriculture<br>
+Mohan Babu University<br>
+Tirupati, Andhra Pradesh, India
+
+</div>
+
+
+<div>
+
+<strong>Email</strong><br>
+
+<a href="mailto:pasammaheswarareddy@gmail.com">
+pasammaheswarareddy@gmail.com
+</a>
+
+<br><br>
+
+<strong>ORCID</strong><br>
+
+<a href="https://orcid.org/0000-0002-8337-7094"
+target="_blank">
+0000-0002-8337-7094
+</a>
+
+</div>
+
+</div>
 
 </section>
+
+
+</main>
 
 </div>
 
 
 <footer>
 
-    <p>
-        © 2026 Dr. P. Maheswara Reddy |
-        Entomology & Lepidoptera Taxonomy
-    </p>
+© 2026 Dr. P. Maheswara Reddy |
+Entomology • Lepidoptera Taxonomy • Systematics
 
 </footer>
+
 
 </body>
 </html>
